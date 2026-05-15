@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://8lyk4noo55h5"]
+
+[ext_resource type="Script" uid="uid://csfyl2hq11kks" path="res://00_Global/global_audio_stream.gd" id="1_ii2qe"]
+[ext_resource type="AudioStream" uid="uid://djnjdj8ubb027" path="res://00_Global/audio/Nature.mp3" id="2_byxss"]
+
+[node name="GlobalAudio" type="AudioStreamPlayer2D"]
+stream = ExtResource("2_byxss")
+volume_db = 10.0
+script = ExtResource("1_ii2qe")

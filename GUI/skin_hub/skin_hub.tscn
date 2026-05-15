@@ -1,0 +1,102 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2ees30qb45yx"]
+
+[ext_resource type="Script" uid="uid://b1awgydpgtdob" path="res://GUI/skin_hub/skin_hub.gd" id="1_6iyiu"]
+[ext_resource type="Texture2D" uid="uid://bmie2kaw5j2h6" path="res://Car/art/Car1.png" id="2_f78p4"]
+[ext_resource type="Texture2D" uid="uid://74ysl7mcfsko" path="res://Car/art/Car3.png" id="3_bow0u"]
+[ext_resource type="Texture2D" uid="uid://l8gpuie521jp" path="res://Car/art/Car2.png" id="4_4x8ks"]
+
+[node name="SkinHub" type="Node2D"]
+script = ExtResource("1_6iyiu")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.31756142, 0.45256633, 0.17795765, 0.29803923)
+
+[node name="Back" type="Button" parent="CanvasLayer/Control"]
+modulate = Color(1, 1, 1, 0.8980392)
+layout_mode = 1
+offset_right = 160.0
+offset_bottom = 69.0
+theme_override_font_sizes/font_size = 32
+text = "Back"
+
+[node name="Skin1" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 236.0
+offset_top = 457.0
+offset_right = 358.0
+offset_bottom = 520.0
+theme_override_font_sizes/font_size = 40
+text = "Skin 1"
+
+[node name="Skin2" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 535.0
+offset_top = 457.0
+offset_right = 657.0
+offset_bottom = 520.0
+theme_override_font_sizes/font_size = 40
+text = "Skin 2"
+
+[node name="Skin3" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 832.0
+offset_top = 454.0
+offset_right = 954.0
+offset_bottom = 517.0
+theme_override_font_sizes/font_size = 40
+text = "Skin 3"
+
+[node name="RaceCar" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 329.0
+offset_top = 92.0
+offset_right = 580.0
+offset_bottom = 175.0
+theme_override_font_sizes/font_size = 60
+text = "Race Car"
+
+[node name="Lamb" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 809.0
+offset_top = 94.0
+offset_right = 986.0
+offset_bottom = 177.0
+theme_override_font_sizes/font_size = 60
+text = "Lamb"
+
+[node name="Car1" type="Sprite2D" parent="CanvasLayer"]
+texture_filter = 1
+position = Vector2(888, 308)
+scale = Vector2(8, 8)
+texture = ExtResource("3_bow0u")
+hframes = 4
+
+[node name="Car2" type="Sprite2D" parent="CanvasLayer"]
+texture_filter = 1
+position = Vector2(589, 313)
+scale = Vector2(8, 8)
+texture = ExtResource("4_4x8ks")
+hframes = 4
+
+[node name="Car3" type="Sprite2D" parent="CanvasLayer"]
+texture_filter = 1
+position = Vector2(293, 307)
+scale = Vector2(8, 8)
+texture = ExtResource("2_f78p4")
+hframes = 4

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://0a535k5igac7"]
+
+[ext_resource type="Texture2D" uid="uid://dh3rgadp7v6tj" path="res://GUI/player_hub/speed/speed_bar.png" id="1_fos15"]
+[ext_resource type="Script" uid="uid://crv5ibnxifnb8" path="res://GUI/player_hub/speed/speed_bar.gd" id="1_tg37i"]
+
+[node name="SpeedBar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_tg37i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(8, 8)
+scale = Vector2(6, 6)
+texture = ExtResource("1_fos15")
+hframes = 13

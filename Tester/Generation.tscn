@@ -1,0 +1,20 @@
+[gd_scene load_steps=6 format=3 uid="uid://cjswywfhqa0qu"]
+
+[ext_resource type="Script" uid="uid://cx1lfuct71krn" path="res://Tester/generation.gd" id="1_l0mqq"]
+[ext_resource type="PackedScene" uid="uid://dkhj8fggbmxej" path="res://TileMap/racetrack.tscn" id="2_l25ok"]
+[ext_resource type="PackedScene" uid="uid://msln043dk2l4" path="res://Car/RacingCar.tscn" id="3_l25ok"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_l0mqq"]
+seed = 1
+frequency = 0.0591
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_l25ok"]
+noise = SubResource("FastNoiseLite_l0mqq")
+
+[node name="Generation" type="Node2D"]
+script = ExtResource("1_l0mqq")
+noise_height_text = SubResource("NoiseTexture2D_l25ok")
+
+[node name="Racetrack" parent="." instance=ExtResource("2_l25ok")]
+
+[node name="RacingCar" parent="." instance=ExtResource("3_l25ok")]

@@ -1,0 +1,106 @@
+[gd_scene load_steps=12 format=3 uid="uid://dajwmv1hfciv8"]
+
+[ext_resource type="Script" uid="uid://cxi2oj2iev61c" path="res://Props/Crate/crate.gd" id="1_3d65w"]
+[ext_resource type="Texture2D" uid="uid://da46fvggcgyw" path="res://Props/art/Crates.png" id="1_ripeh"]
+[ext_resource type="PackedScene" uid="uid://oidhulhkfmgr" path="res://GeneralNodes/Box/HurtBox.tscn" id="2_twtwc"]
+[ext_resource type="PackedScene" uid="uid://d3w36m218rwua" path="res://GeneralNodes/Box/HitBox.tscn" id="3_gio73"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_twtwc"]
+size = Vector2(24, 20)
+
+[sub_resource type="Animation" id="Animation_v66nc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_3d65w"]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_smqcn"]
+resource_name = "destory"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.2, 0.26666668, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3v6ws"]
+_data = {
+&"RESET": SubResource("Animation_v66nc"),
+&"default": SubResource("Animation_3d65w"),
+&"destory": SubResource("Animation_smqcn")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gio73"]
+size = Vector2(28, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3d65w"]
+size = Vector2(28, 24)
+
+[node name="Crate" type="Node2D"]
+script = ExtResource("1_3d65w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_ripeh")
+hframes = 6
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
+shape = SubResource("RectangleShape2D_twtwc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_3v6ws")
+}
+
+[node name="HurtBox" parent="." instance=ExtResource("2_twtwc")]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("RectangleShape2D_gio73")
+debug_color = Color(0.84313726, 0.34509805, 0.41568628, 0.15294118)
+
+[node name="HitBox" parent="." instance=ExtResource("3_gio73")]
+visible = false
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource("RectangleShape2D_3d65w")
+debug_color = Color(0.8772697, 0.22509515, 0.64357454, 0.09019608)

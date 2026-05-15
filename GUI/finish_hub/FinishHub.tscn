@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyo4684cmilde"]
+
+[ext_resource type="Script" uid="uid://3i26jpwkfjma" path="res://GUI/finish_hub/finish_hub.gd" id="1_r56yi"]
+
+[node name="FinishHub" type="CanvasLayer"]
+script = ExtResource("1_r56yi")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.39, 0.39, 0.39, 0.4627451)
+
+[node name="Complete" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.5
+offset_top = -27.5
+offset_right = 105.5
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.42432, 0.78, 0.21839997, 1)
+theme_override_font_sizes/font_size = 60
+text = "Completed"
+
+[node name="Back" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -111.0
+offset_top = -246.0
+offset_right = 108.0
+offset_bottom = -193.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "Back to Menu"

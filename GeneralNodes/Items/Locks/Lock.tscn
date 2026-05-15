@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://cxmq3w3ooijhv"]
+
+[ext_resource type="Texture2D" uid="uid://d13flwmdee8v4" path="res://GeneralNodes/Items/Sprites/Lock.png" id="1_5k5ul"]
+[ext_resource type="Script" uid="uid://co1vfllemobth" path="res://GeneralNodes/Items/Locks/lock.gd" id="1_t0imt"]
+
+[sub_resource type="Animation" id="Animation_f82e6"]
+resource_name = "Moving"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1.5, 1.5), Vector2(1.3, 1.3), Vector2(1.5, 1.5)]
+}
+
+[sub_resource type="Animation" id="Animation_e4phv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1advm"]
+_data = {
+&"Moving": SubResource("Animation_f82e6"),
+&"RESET": SubResource("Animation_e4phv")
+}
+
+[node name="Lock" type="Node2D"]
+script = ExtResource("1_t0imt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+texture_filter = 1
+position = Vector2(0, -8.000004)
+scale = Vector2(2.1875, 2.28125)
+texture = ExtResource("1_5k5ul")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_1advm")
+}

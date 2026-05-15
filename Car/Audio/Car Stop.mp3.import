@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d185fwls3ofxh"
+path="res://.godot/imported/Car Stop.mp3-b0b769a5330e98a464d1301a18b8efc1.mp3str"
+
+[deps]
+
+source_file="res://Car/Audio/Car Stop.mp3"
+dest_files=["res://.godot/imported/Car Stop.mp3-b0b769a5330e98a464d1301a18b8efc1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

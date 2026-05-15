@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dttv6o2kasrie"]
+
+[ext_resource type="Script" uid="uid://61ghgwgniki5" path="res://GUI/player_hub/heart/hearts.gd" id="1_bcs4d"]
+[ext_resource type="Texture2D" uid="uid://bd5hi7o4bakfe" path="res://GUI/player_hub/heart/Hearts.png" id="2_dyq5j"]
+
+[node name="Hearts" type="Control"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 35.0
+offset_bottom = 35.0
+script = ExtResource("1_bcs4d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(17, 16)
+scale = Vector2(2, 2)
+texture = ExtResource("2_dyq5j")
+hframes = 3
+frame = 2

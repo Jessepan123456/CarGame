@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://blunncj5psr2k"]
+
+[ext_resource type="Script" uid="uid://bnl3x7euhoq3c" path="res://Props/Traffic Block/block.gd" id="1_5f0vh"]
+[ext_resource type="Texture2D" uid="uid://cl1vv4848ceae" path="res://Props/art/Traffic Block.png" id="1_lvsmc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lvsmc"]
+size = Vector2(26, 24)
+
+[node name="Block" type="Node2D"]
+script = ExtResource("1_5f0vh")
+
+[node name="Block" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_lvsmc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_lvsmc")

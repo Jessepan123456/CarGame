@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://docyn23lyp4g2"]
+
+[ext_resource type="Script" uid="uid://d8yla3vhavah" path="res://GeneralNodes/Laps&Goals/Laps.gd" id="1_ubj0s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nvd47"]
+size = Vector2(54, 4.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ubj0s"]
+size = Vector2(54, 6)
+
+[node name="Laps" type="Area2D"]
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+script = ExtResource("1_ubj0s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_nvd47")
+debug_color = Color(0.26575997, 0.44, 0.2464, 0.38039216)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_ubj0s")
+debug_color = Color(0.40484244, 0.5049531, 0.8890452, 0.41960785)

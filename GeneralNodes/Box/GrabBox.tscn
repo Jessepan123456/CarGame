@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmq30ftsjg7m6"]
+
+[ext_resource type="Script" uid="uid://bpvsj8niph3s" path="res://GeneralNodes/Box/grab_box.gd" id="1_86crx"]
+
+[node name="GrabBox" type="Area2D"]
+collision_layer = 8
+script = ExtResource("1_86crx")

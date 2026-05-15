@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://2ei7xf8ynne8"]
+
+[ext_resource type="Script" uid="uid://bgtas51dxay4i" path="res://GeneralNodes/Laps&Goals/unblock.gd" id="1_acb10"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_llwq3"]
+size = Vector2(59, 20)
+
+[node name="Unblock" type="Area2D"]
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+script = ExtResource("1_acb10")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_llwq3")
+debug_color = Color(0.29225558, 0.6176123, 0.36044148, 0.41960785)
